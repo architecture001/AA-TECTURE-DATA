@@ -170,29 +170,14 @@
 <footer>
     <p>© 2026 AA-TECTURE DATA. All Rights Reserved.</p>
 </footer>
-    <script>    
-<script>
-let deferredPrompt;
-
-window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-});
-
-document.getElementById("installApp").addEventListener("click", async () => {
-
-    if (!deferredPrompt) {
-        alert("Please open this website in Chrome and try again.");
-        return;
-    }
-
-    deferredPrompt.prompt();
-
-    await deferredPrompt.userChoice;
-
-    deferredPrompt = null;
-});
-</script>
-
+    <script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+            .then(() => console.log("Service Worker registered"))
+            .catch((error) => console.log("Service Worker error:", error));
+    });
+}
+    </script>
 </body>
   </html>
