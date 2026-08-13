@@ -1,0 +1,9 @@
+{
+  "name": "AA-TECTURE DATA",
+  "short_name": "AA-TECTURE",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7ff",
+  "theme_color": "#0645d8",
+  "description": "Fast, Reliable & Affordable Digital Services"
+}
