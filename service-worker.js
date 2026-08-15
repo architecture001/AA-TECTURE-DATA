@@ -1,21 +1,17 @@
-const CACHE_NAME = "aa-tecture-data-v1";
+Create a complete production-ready service-worker.js for my "AA-TECTURE DATA" PWA.
 
-const FILES_TO_CACHE = [
-    "./",
-    "./index.html",
-    "./manifest.json"
-];
-
-self.addEventListener("install", (event) => {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then((cache) => cache.addAll(FILES_TO_CACHE))
-    );
-});
-
-self.addEventListener("fetch", (event) => {
-    event.respondWith(
-        caches.match(event.request)
-            .then((response) => response || fetch(event.request))
-    );
-});
+Requirements:
+- Cache the main application files
+- Cache index.html
+- Cache manifest.json
+- Cache important CSS and JavaScript files if they exist
+- Support offline loading
+- Use cache-first strategy for static assets
+- Use network-first strategy for dynamic/API requests
+- Never cache sensitive user information, wallet balances, payment information or transaction responses
+- Automatically remove old caches when a new version is deployed
+- Handle install, activate and fetch events correctly
+- Make the service worker work on GitHub Pages
+- Do not break API requests
+- Do not expose secret keys
+- Return the complete service-worker.js code only.
