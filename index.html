@@ -1,40 +1,208 @@
-Rewrite and upgrade the entire index.html file for my website called "AA-TECTURE DATA".
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
-This is a professional Nigerian mobile data vending website.
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-Requirements:
-- Website name: AA-TECTURE DATA
-- Modern, clean and professional UI
-- Mobile-first responsive design
-- Use HTML, CSS and JavaScript
-- Create a beautiful header with AA-TECTURE DATA logo/name
-- Add navigation: Home, Data Plans, Transactions, About, Contact
-- Add a hero section explaining that users can buy affordable data bundles
-- Add network cards for MTN, Airtel, Glo and 9mobile
-- Add data plan cards such as 500MB, 1GB, 2GB, 3GB, 5GB, 10GB and 20GB
-- Each plan must have network, data size, validity, price and a "Buy Now" button
-- Add a search/filter system for data plans
-- Add a login/register interface
-- Add user dashboard
-- Add wallet balance section
-- Add transaction history
-- Add profile section
-- Add "Buy Data" form where the user enters phone number and selects network and plan
-- Validate Nigerian phone numbers
-- Add confirmation modal before purchase
-- Add success/error notifications
-- Add loading states
-- Add responsive bottom navigation for mobile
-- Add footer
-- Use attractive professional colors suitable for a data vending business
-- Make all buttons and navigation work with JavaScript
-- Do not use fake links that do nothing
-- Keep the code clean and well organized
-- Make the website installable as a PWA
-- Connect the frontend to the existing data/configuration file when appropriate
-- Do not delete useful existing functionality unless replacing it with a better working version
+    <meta name="theme-color" content="#0b3d91">
 
-IMPORTANT:
-This is a frontend data vending website. Do not expose secret API keys in this file.
-If an API/backend is required for real data delivery or payment, create clear placeholder functions/endpoints that can later connect to a secure backend.
-Return the complete updated index.html code.
+    <meta name="description"
+          content="AA-TECTURE DATA - Fast, Reliable and Affordable Digital Services">
+
+    <link rel="manifest" href="./manifest.json">
+
+    <title>AA-TECTURE DATA</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #111827;
+        }
+
+        header {
+            background: linear-gradient(135deg, #001f66, #0758d9);
+            color: white;
+            padding: 18px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0,0,0,.2);
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav button {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #00154d, #073d9c);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .hero-icon {
+            font-size: 75px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            opacity: .9;
+            margin-bottom: 30px;
+        }
+
+        .install-btn {
+            background: white;
+            color: #003b91;
+            border: none;
+            padding: 17px 35px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,.2);
+        }
+
+        .install-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 18px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #003b91;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,.08);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+        }
+
+        .plan {
+            background: white;
+            padding: 22px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.08);
+        }
+
+        .plan h3 {
+            color: #003b91;
+            margin-bottom: 10px;
+        }
+
+        .network {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        .buy-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #0758d9;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .buy-btn:hover {
+            background: #003b91;
+        }
+
+        .dashboard {
+            background: #003b91;
+            color: white;
+            padding: 25px;
+            border-radius: 18px;
+            margin-bottom: 30px;
+        }
+
+        .balance {
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .form-box {
+            max-width: 500px;
+            margin: 30px auto;
+            background: white;
