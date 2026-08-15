@@ -1,18 +1,17 @@
-{
-  "name": "AA-TECTURE DATA",
-  "short_name": "AA-TECTURE",
-  "start_url": "./index.html",
-  "scope": "./",
-  "display": "standalone",
-  "background_color": "#f4f7ff",
-  "theme_color": "#0645d8",
-  "description": "Fast, Reliable & Affordable Digital Services",
-  "icons": [
-    {
-      "src": "./logo.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
-    }
-  ]
-}
+Create a complete production-ready manifest.json for my PWA website "AA-TECTURE DATA".
+
+Requirements:
+- App name: AA-TECTURE DATA
+- Short name: AA-TECTURE
+- Description: Fast and affordable mobile data vending platform in Nigeria
+- Display: standalone
+- Theme color and background color should match a professional data vending website
+- Start URL should be /
+- Scope should be /
+- Portrait orientation
+- Add proper PWA icons configuration
+- Include 192x192 and 512x512 icons
+- Make it compatible with Android Chrome installation
+- Make the app appear as "AA-TECTURE DATA" when installed
+- Do not use invalid JSON
+- Return only the complete manifest.json code.
